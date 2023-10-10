@@ -32,4 +32,4 @@ https://unibuc.ro/studii/structura-anului-universitar/
 
 ### Laboratories
 
-#### [Laboratory 01](Lab 01/README.md)
+#### [Laboratory 01](Lab%2001/README.md)
