@@ -14,10 +14,18 @@
 - **Dependency Injection**: At a basic level, Dependency Injection is like giving your class everything it needs to function rather than letting the
   class
   find or make them on its own. It's like going to a hotel where everything you need is provided versus camping in the wild.
-    - **Bean Factory**: The mechanism within Spring that creates and wires together various beans (objects).
+
     - **Constructor Injection**: Dependencies are provided through the constructor.
     - **Setter Injection**: Dependencies are set using setter methods.
     - **Method Injection**: Advanced feature where we can override methods to return a lookup for a particular bean.
+    - **Bean Factory**: The mechanism within Spring that creates and wires together various beans (objects).
+    - **@Bean**: Used to declare a Spring-managed object at the method level. It signals that the method will return an object that should be
+      registered as a bean in the Spring application context. Typically used inside @Configuration classes or any class annotated with Spring’s
+      stereotype
+      annotations. This allows developers to use Java code to define beans explicitly.
+    - **@Qualifier**: Helps in resolving ambiguities where multiple beans of the same type exist in the context. It specifies which exact bean should
+      be autowired when there are multiple candidates. Used alongside @Autowired to specify the name of the bean that should be injected. It can also
+      be used on methods annotated with @Bean to assign a qualifier value (or alias) to a bean.
 
 <p>
 
