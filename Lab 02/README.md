@@ -21,8 +21,7 @@
     - **Bean Factory**: The mechanism within Spring that creates and wires together various beans (objects).
     - **@Bean**: Used to declare a Spring-managed object at the method level. It signals that the method will return an object that should be
       registered as a bean in the Spring application context. Typically used inside @Configuration classes or any class annotated with Spring’s
-      stereotype
-      annotations. This allows developers to use Java code to define beans explicitly.
+      stereotype annotations. This allows developers to use Java code to define beans explicitly.
     - **@Qualifier**: Helps in resolving ambiguities where multiple beans of the same type exist in the context. It specifies which exact bean should
       be autowired when there are multiple candidates. Used alongside @Autowired to specify the name of the bean that should be injected. It can also
       be used on methods annotated with @Bean to assign a qualifier value (or alias) to a bean.
@@ -42,13 +41,11 @@
 - **Dependencies**: Think of dependencies as the various ingredients needed to make a particular dish. Your Java project is the dish, and it may need
   several libraries or components (ingredients) to work. Instead of gathering and managing each ingredient individually, Maven does it for you.
     - **POM (pom.xml)**: The "recipe book" where you list down all the ingredients you need. Here, you specify which libraries and versions your
-      project
-      requires.
+      project requires.
     - **Central Repository**: Maven's main storage area where it fetches the required dependencies. It's like a gigantic pantry stocked with every
       imaginable ingredient.
     - **Transitive Dependencies**: The idea that if you need one ingredient, you might automatically need a few others. For example, if a library A
-      you've
-      added depends on library B, Maven will fetch both for you.
+      you've added depends on library B, Maven will fetch both for you.
 
 <p>
 
@@ -57,8 +54,7 @@
     - **Build Lifecycle**: Maven has a default build lifecycle with phases like compile, test, and package. Think of it as the step-by-step cooking
       instructions. Each step (phase) might need a specific tool (plugin).
     - **Plugin Goals**: Each plugin can achieve specific tasks. For instance, the maven-compiler-plugin has goals like compile and testCompile to
-      handle
-      source code compilation.
+      handle source code compilation.
     - **Configuration**: Sometimes, you need to adjust the settings on your kitchen gadget (plugin). In Maven, you configure plugins in the pom.xml to
       specify things like which Java version to use for compilation.
 
@@ -68,11 +64,9 @@
   the
   build process.
     - **Standard Layout**: Maven projects have a recommended directory layout (e.g., src/main/java for Java source files, src/test/java for test
-      sources).
-      It’s like organizing your kitchen with specific spots for utensils, spices, and so on.
+      sources). It’s like organizing your kitchen with specific spots for utensils, spices, and so on.
     - **Build Lifecycle**: As mentioned, it's a series of steps Maven follows to build a project. From validating the project structure (validate
-      phase)
-      to compiling code (compile phase) to packaging it into a JAR or WAR (package phase) and more.
+      phase) to compiling code (compile phase) to packaging it into a JAR or WAR (package phase) and more.
 
 #### Useful Links
 
