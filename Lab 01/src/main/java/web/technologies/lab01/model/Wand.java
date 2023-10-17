@@ -20,5 +20,5 @@ public class Wand {
     private double length;
 
     private String owner;
-     
+
 }
