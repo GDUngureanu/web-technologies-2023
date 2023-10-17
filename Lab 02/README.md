@@ -12,9 +12,7 @@
 <p>
 
 - **Dependency Injection**: At a basic level, Dependency Injection is like giving your class everything it needs to function rather than letting the
-  class
-  find or make them on its own. It's like going to a hotel where everything you need is provided versus camping in the wild.
-
+  class find or make them on its own. It's like going to a hotel where everything you need is provided versus camping in the wild.
     - **Constructor Injection**: Dependencies are provided through the constructor.
     - **Setter Injection**: Dependencies are set using setter methods.
     - **Method Injection**: Advanced feature where we can override methods to return a lookup for a particular bean.
@@ -26,11 +24,10 @@
       be autowired when there are multiple candidates. Used alongside @Autowired to specify the name of the bean that should be injected. It can also
       be used on methods annotated with @Bean to assign a qualifier value (or alias) to a bean.
 
-<p>
+<p> 
 
 - **Stereotypes**: They are like labels or tags that you attach to classes to tell Spring how to treat them. It's like wearing different hats on a
-  film
-  set: one for the director, one for the actor, and one for the cameraperson. Spring sees the hat and knows what role you play.
+  film set: one for the director, one for the actor, and one for the cameraperson. Spring sees the hat and knows what role you play.
     - **@Component**: General-purpose stereotype indicating that a class is a Spring-managed component.
     - **@Service**: Indicates that a class is a service component (often used for business logic).
     - **@Repository**: Suggests that a class is a repository (typically used with database operations).
@@ -61,8 +58,7 @@
 <p>
 
 - **Project Structure and Lifecycle**: Every Maven project follows a standard directory layout and a series of steps (lifecycle phases) that dictate
-  the
-  build process.
+  the build process.
     - **Standard Layout**: Maven projects have a recommended directory layout (e.g., src/main/java for Java source files, src/test/java for test
       sources). It’s like organizing your kitchen with specific spots for utensils, spices, and so on.
     - **Build Lifecycle**: As mentioned, it's a series of steps Maven follows to build a project. From validating the project structure (validate
