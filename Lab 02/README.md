@@ -2,67 +2,69 @@
 
 ## Topics
 
-### Spring Core
+- **Spring Core**: At its essence, Spring Core is the foundational part of the larger Spring Framework, responsible for providing dependency injection
+  features. Think of Spring Core as the blueprint of a movie set. It defines where everything should be and ensures every part of the production has
+  what it needs to function smoothly.
 
-- **Spring Context**: It's essentially the heart of the Spring Framework. The Spring context brings everything together, ensuring that every component
-  gets what it needs to operate. It's like the director of a movie; it oversees all the actors, props, and stages to make sure the movie gets made.
-    - **ApplicationContext**: The primary interface for accessing the Spring context. This is the medium through which beans can be retrieved.
-    - **Lifecycle Management**: The Spring context manages the complete lifecycle of beans from creation to destruction.
+    - **Dependency Injection**: This fundamental principle allows an object to supply the dependencies of another object. To imagine this in the movie
+      realm, think of it as the main method actors receive their scripts, costumes, and props. They don't have to look for them; everything they need
+      is provided to them when they step onto the set.
 
-<p>
+        - **Constructor Injection**: Dependencies are provided through the class constructor, just like handing over a full script and costume when an
+          actor first steps on set.
+        - **Setter Injection**: Dependencies are added post-object creation using setter methods, akin to adjusting an actor’s outfit or giving them
+          additional props after they're already on set.
+        - **Method Injection**: This lets you override methods to return a specific bean. It's like a special technique an actor employs during a
+          scene.
+        - **Bean Factory**: This is the core mechanism of Spring responsible for creating and assembling beans, comparable to the backstage crew
+          setting up everything behind the scenes.
 
-- **Dependency Injection**: At a basic level, Dependency Injection is like giving your class everything it needs to function rather than letting the
-  class find or make them on its own. It's like going to a hotel where everything you need is provided versus camping in the wild.
-    - **Constructor Injection**: Dependencies are provided through the constructor.
-    - **Setter Injection**: Dependencies are set using setter methods.
-    - **Method Injection**: Advanced feature where we can override methods to return a lookup for a particular bean.
-    - **Bean Factory**: The mechanism within Spring that creates and wires together various beans (objects).
-    - **@Bean**: Used to declare a Spring-managed object at the method level. It signals that the method will return an object that should be
-      registered as a bean in the Spring application context. Typically used inside @Configuration classes or any class annotated with Spring’s
-      stereotype annotations. This allows developers to use Java code to define beans explicitly.
-    - **@Qualifier**: Helps in resolving ambiguities where multiple beans of the same type exist in the context. It specifies which exact bean should
-      be autowired when there are multiple candidates. Used alongside @Autowired to specify the name of the bean that should be injected. It can also
-      be used on methods annotated with @Bean to assign a qualifier value (or alias) to a bean.
+    - **Spring Context**: This is the core of the Spring Framework, ensuring that every component is instantiated, configured, and assembled. If we
+      relate this to a movie set, the Spring Context is like the environment of the movie — where every scene takes place and all interactions occur.
 
-<p> 
+        - **ApplicationContext**: The primary interface for accessing the Spring context, letting you retrieve and manage beans. It functions like the
+          director's clipboard, allowing access to every character and prop in the film.
+        - **Lifecycle Management**: Spring context manages the entire lifecycle of beans from their creation to their destruction. This mirrors the
+          journey of an actor from their first audition to the wrap-up party.
 
-- **Stereotypes**: They are like labels or tags that you attach to classes to tell Spring how to treat them. It's like wearing different hats on a
-  film set: one for the director, one for the actor, and one for the cameraperson. Spring sees the hat and knows what role you play.
-    - **@Component**: General-purpose stereotype indicating that a class is a Spring-managed component.
-    - **@Service**: Indicates that a class is a service component (often used for business logic).
-    - **@Repository**: Suggests that a class is a repository (typically used with database operations).
-    - **@Controller**: Marks a class as a web controller, capable of handling incoming web requests.
+    - **Stereotypes and Annotations**: These are the labels or tags attached to Spring beans to guide the framework on how to treat them. Picture
+      everyone on a movie set wearing a badge specifying their role, so everyone knows who's the director, who's an actor, and who's handling the
+      camera.
 
-#### Maven
+        - **@Component**: This general-purpose annotation indicates the class is a Spring component whose lifecycle is managed by Spring.
+        - **@Service**: Denotes the class is a service component, mainly used for business logic, acting like the badge of the lead actor or actress.
+        - **@Repository**: This annotation points out the class deals with database operations. It's like the badge for those managing archives and
+          props on set.
+        - **@Controller**: Classes with this annotation handle incoming web requests, functioning as the traffic directors of our movie set.
+        - **@Bean**: Used to declare a Spring-managed object, it's like specifying a unique role or character in our movie.
+        - **@Qualifier**: It resolves ambiguities by specifying which exact bean should be autowired. In movie terms, when multiple actors could fit a
+          role, the director picks the perfect match with clarity.
 
-- **Dependencies**: Think of dependencies as the various ingredients needed to make a particular dish. Your Java project is the dish, and it may need
-  several libraries or components (ingredients) to work. Instead of gathering and managing each ingredient individually, Maven does it for you.
-    - **POM (pom.xml)**: The "recipe book" where you list down all the ingredients you need. Here, you specify which libraries and versions your
-      project requires.
-    - **Central Repository**: Maven's main storage area where it fetches the required dependencies. It's like a gigantic pantry stocked with every
-      imaginable ingredient.
-    - **Transitive Dependencies**: The idea that if you need one ingredient, you might automatically need a few others. For example, if a library A
-      you've added depends on library B, Maven will fetch both for you.
+- **Maven**: This is a powerful project management tool primarily used for Java projects. It manages building, reporting, and documentation using a
+  consistent approach. Think of Maven as a renowned chef in a well-organized kitchen. This chef not only knows all the recipes but also has a
+  systematic approach to cooking dishes, ensuring that the right ingredients and tools are always used.
 
-<p>
+    - **Project Structure and Lifecycle**: Every Maven project adheres to a specific directory layout and undergoes a sequence of steps (lifecycle
+      phases) during its build process. Just as a kitchen has designated areas for different utensils, spices, and ingredients, Maven projects are
+      organized in a structured manner for clarity and standardization.
+        - **Standard Layout**: Maven projects have a recommended directory layout (e.g., src/main/java for Java source files, src/test/java for test
+          sources). This structure is akin to a kitchen organized with specific spots for utensils, spices, and ingredients.
+        - **Build Lifecycle**: Maven follows a sequence of steps (lifecycle phases) during its build process. These phases are like the series of
+          steps a chef follows to prepare a dish, from the initial validation of the dish (validate phase) to its final presentation (package phase).
 
-- **Plugins**: If dependencies are the ingredients, plugins are the kitchen gadgets and tools. They help in processing, building, and managing your
-  project. For instance, you might have a tool (plugin) for blending, one for baking, one for frying, and so on.
-    - **Build Lifecycle**: Maven has a default build lifecycle with phases like compile, test, and package. Think of it as the step-by-step cooking
-      instructions. Each step (phase) might need a specific tool (plugin).
-    - **Plugin Goals**: Each plugin can achieve specific tasks. For instance, the maven-compiler-plugin has goals like compile and testCompile to
-      handle source code compilation.
-    - **Configuration**: Sometimes, you need to adjust the settings on your kitchen gadget (plugin). In Maven, you configure plugins in the pom.xml to
-      specify things like which Java version to use for compilation.
+    - **Dependencies**: These are external libraries that your project requires to function correctly.
+        - **POM (pom.xml)**: This is the core of a Maven project, where you specify the libraries and versions your project needs. Think of it as a
+          chef's recipe book, detailing the required ingredients.
+        - **Central Repository**: Maven's main storage for dependencies. It's like a vast grocery store, stocked with all necessary ingredients.
+        - **Transitive Dependencies**: Maven ensures that if your project requires a specific library, any other related libraries are also fetched.
+          It's akin to knowing that a dish with tomatoes might also need some basil and mozzarella.
 
-<p>
-
-- **Project Structure and Lifecycle**: Every Maven project follows a standard directory layout and a series of steps (lifecycle phases) that dictate
-  the build process.
-    - **Standard Layout**: Maven projects have a recommended directory layout (e.g., src/main/java for Java source files, src/test/java for test
-      sources). It’s like organizing your kitchen with specific spots for utensils, spices, and so on.
-    - **Build Lifecycle**: As mentioned, it's a series of steps Maven follows to build a project. From validating the project structure (validate
-      phase) to compiling code (compile phase) to packaging it into a JAR or WAR (package phase) and more.
+    - **Plugins**: Plugins are tools that extend Maven's capabilities, aiding various aspects of the build lifecycle. Think of them as specialized
+      kitchen gadgets each having a distinct purpose.
+        - **Plugin Goals**: Each plugin can perform specific tasks during the software development process. Just as each kitchen tool, like a blender
+          or oven, has its unique function, each plugin goal serves a distinct purpose in Maven.
+        - **Configuration**: In Maven, you can adjust settings for these plugins in the pom.xml, tailoring their behavior for your project's needs.
+          This customization is like chefs adjusting settings on their kitchen tools for the perfect dish.
 
 #### Useful Links
 

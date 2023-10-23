@@ -35,3 +35,5 @@ https://unibuc.ro/studii/structura-anului-universitar/
 #### [Laboratory 01](Lab%2001/README.md)
 
 #### [Laboratory 02](Lab%2002/README.md)
+
+#### [Laboratory 03](Lab%2003/README.md)
