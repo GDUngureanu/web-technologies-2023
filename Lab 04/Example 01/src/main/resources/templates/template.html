@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+</head>
+<body>
+<h1>To-Do List</h1>
+
+<!-- Add New Item -->
+<div>
+  <form th:action="@{/todos}" method="post">
+    <input type="text" name="title" placeholder="Title"/>
+    <input type="text" name="description" placeholder="Description"/>
+    <button type="submit">Add Item</button>
+  </form>
+</div>
+
+<!-- Edit Item -->
+<div th:if="${editItem != null}">
+  <h2>Edit ToDo</h2>
+  <form th:action="@{/todos/edit/{id}(id=${editItem.id})}" method="post">
+    <input type="text" name="title" th:value="${editItem.title}"/>
+    <input type="text" name="description" th:value="${editItem.description}"/>
+    <button type="submit">Save</button>
+    <a th:href="@{/todos}">Cancel</a>
+  </form>
+</div>
+
+<!-- ToDo List -->
+<div>
+  <ul>
+    <li th:each="item : ${items}">
+      <span th:text="${item.title}">Title</span>:
+      <span th:text="${item.description}">Description</span>
+      <a th:href="@{'/todos/edit/' + ${item.id}}">Edit</a>
+      <a th:href="@{/todos/delete/{id}(id=${item.id})}">Done</a>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>View ToDo</title>
+</head>
+<body>
+<h2>View To-Do</h2>
+<div>
+  <p><strong>Title:</strong> <span th:text="${todo.title}">Title</span></p>
+  <p><strong>Description:</strong> <span th:text="${todo.description}">Description</span></p>
+  <a href="/todos">Back to List</a>
+</div>
+</body>
+</html>

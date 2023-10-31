@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>To-Do Form</title>
+</head>
+<body>
+<h2>To-Do Form</h2>
+<form th:action="@{/todos/save}" th:object="${todo}" method="post">
+  <input type="hidden" th:field="*{id}"/>
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" th:field="*{title}" id="title" placeholder="Title"/>
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea th:field="*{description}" id="description" placeholder="Description"></textarea>
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+</body>
+</html>

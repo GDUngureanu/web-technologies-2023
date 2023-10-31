@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<h1>To-Do List</h1>
+
+<div>
+  <input type="text" id="newToDoTitle" placeholder="Title">
+  <input type="text" id="newToDoDescription" placeholder="Description">
+  <button onclick="createToDo()">Add Item</button>
+</div>
+
+<div id="todoList"></div>
+
+<script>
+    // Function to load all ToDo items
+    function loadTodos() {
+        $.ajax({
+            url: '/todos',
+            type: 'GET',
+            success: function(todos) {
+                let content = '';
+                todos.forEach(function(todo) {
+                    content += '<div id="todo-' + todo.id + '"><h3>' + todo.title + '</h3><p>' + todo.description + '</p>';
+                    content += '<button onclick="editToDoForm(' + todo.id + ')">Edit</button>';
+                    content += '<button onclick="deleteToDo('+ todo.id +')">Done</button></div>';
+                });
+                $('#todoList').html(content);
+            }
+        });
+    }
+
+    // Function to display an editable form for a ToDo item
+    window.editToDoForm = function(id) {
+        const todoDiv = $('#todo-' + id);
+        const title = todoDiv.find('h3').text();
+        const description = todoDiv.find('p').text();
+
+        const editForm = `
+            <input type="text" id="editTitle-${id}" value="${title}">
+            <input type="text" id="editDescription-${id}" value="${description}">
+            <button onclick="updateToDo(${id})">Save</button>
+            <button onclick="loadTodos()">Cancel</button>
+        `;
+
+        todoDiv.html(editForm);
+    };
+
+    // Function to update a ToDo item
+    window.updateToDo = function(id) {
+        const title = $('#editTitle-' + id).val();
+        const description = $('#editDescription-' + id).val();
+
+        $.ajax({
+            url: '/todos/' + id,
+            type: 'PUT',
+            contentType: 'application/json',
+            data: JSON.stringify({ title: title, description: description }),
+            success: function() {
+                loadTodos();
+            }
+        });
+    };
+
+    // Function to create a new ToDo item
+    window.createToDo = function() {
+        const title = $('#newToDoTitle').val();
+        const description = $('#newToDoDescription').val();
+
+        $.ajax({
+            url: '/todos',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ title: title, description: description }),
+            success: function() {
+                loadTodos();
+            }
+        });
+    };
+
+    // Function to delete a ToDo item
+    window.deleteToDo = function(id) {
+        $.ajax({
+            url: '/todos/' + id,
+            type: 'DELETE',
+            success: function() {
+                loadTodos();
+            }
+        });
+    };
+
+    $(document).ready(function() {
+        loadTodos();
+    });
+
+
+
+</script>
+
+</body>
+</html>

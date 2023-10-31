@@ -7,7 +7,7 @@
 - [ ] StarDestroyers - Use a Bean annotation
 - [ ] TIEFighters - Use a Bean annotation with name as the serial number of the class
 - [ ] BobaFetts - Use a Bean annotation and a Qualifier with name as the clone code of the class
-- [ ] EmpireConfiguration - Use a Component annotation
+- [ ] EmpireConfiguration - Use a Configuration annotation
 - [ ] AssetDeployments - Use a Component annotation
     - [ ] DeathStarDeployment - Add Autowired and/or Qualifier where required in constructor
     - [ ] EndorDeployment - Add Autowired and/or Qualifier where required on field
