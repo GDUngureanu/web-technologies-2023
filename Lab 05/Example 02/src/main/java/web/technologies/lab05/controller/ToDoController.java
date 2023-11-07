@@ -1,4 +1,4 @@
-package web.technologies.lab04.controller;
+package web.technologies.lab05.controller;
 
 import java.util.Collection;
 
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import web.technologies.lab04.model.Item;
-import web.technologies.lab04.service.ToDoService;
+import web.technologies.lab05.model.Item;
+import web.technologies.lab05.service.ToDoService;
 
 @RestController
 @RequestMapping("/todos")

@@ -1,4 +1,4 @@
-package web.technologies.lab04.service;
+package web.technologies.lab05.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package web.technologies.lab04.service;
+package web.technologies.lab05.service;
 
 import java.util.Collection;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Service;
-import web.technologies.lab04.model.Item;
+import web.technologies.lab05.model.Item;
 
 @Service
 public class ToDoService {

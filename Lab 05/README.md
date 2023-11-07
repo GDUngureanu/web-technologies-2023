@@ -1,4 +1,4 @@
-# Web Technologies - Laboratory 04
+# Web Technologies - Laboratory 05
 
 ## Topics
 
@@ -70,73 +70,51 @@
 
 ![scheme.png](scheme.png)
 
-### Thymeleaf
-
-#### Thymeleaf is a modern server-side Java template engine for web and standalone environments, capable of processing HTML, XML, JavaScript, CSS, and even plain text. It's particularly suited for serving XHTML/HTML5 in web applications, integrating with Spring frameworks, and works well with HTML5.
-
-- **Analogy:** Think of Thymeleaf as a skilled artist specializing in creating detailed, dynamic paintings (web pages). This artist can work with
-  various materials (HTML, XML, JavaScript) and is particularly good at creating lifelike scenes (HTML5 web applications). They're also adept at
-  collaborating with a construction team (Spring Framework), ensuring the artwork fits perfectly in the architectural design.
-
-1. **Templates:** Templates in Thymeleaf are essentially the blueprints or pre-designed frameworks for the final output (usually an HTML file). They
-   define the static structure of the output along with placeholders for dynamic content.
-
-    - **Analogy:** Templates in Thymeleaf can be likened to a storyboard used in film-making. It provides a skeletal framework outlining each
-      scene's layout, where specific dynamic elements, like dialogue or characters (in Thymeleaf, dynamic data), will be inserted. The storyboard
-      ensures consistency while allowing dynamic adaptation based on the script.
-
-2. **Expression Language:** Thymeleaf's expression language (Thymeleaf Standard Expression Language - SpEL) is used within templates to bind data from
-   the application (typically the model attributes) to the template, enabling dynamic content generation.
-
-    - **Analogy:** Imagine the expression language in Thymeleaf as a script translator on a movie set, where the script is in a foreign language. This
-      translator interprets and adapts the script (model data) for the actors (template) in real-time, ensuring the dialogue fits seamlessly into the
-      storyboard.
-
-3. **Integration with Spring Framework:** Thymeleaf integrates smoothly with the Spring Framework, allowing for seamless and flexible data binding,
-   internationalization, and general Spring application context utilization within templates.
-
-    - **Analogy:** In our movie production analogy, integrating Thymeleaf with Spring Framework is like having a specialized collaboration where the
-      artist (Thymeleaf) works directly with the construction team (Spring Framework). This partnership ensures that the artworks (web pages) are not
-      only aesthetically pleasing but also functionally integrated with the building's infrastructure (Spring-based web application), providing a
-      holistic experience.
-
-4. **Server-Side Rendering:** Server-side rendering in Thymeleaf means that templates are processed on the server to generate and send complete HTML
-   to the client's browser, reducing the need for heavy client-side processing.
-
-    - **Analogy:**  Consider server-side rendering as akin to preparing an entire movie for a viewer, rather than having them act it out. The movie (
-      complete web page) is fully directed, produced, and ready to watch on the server, and sent to the viewer's screen (browser) fully formed,
-      negating the need for the viewer to interpret a script or storyboard (client-side processing) themselves.
-
-### Thymeleaf with Spring
+### JavaScript Web Application (Client-Side Rendering)
 
 #### Advantages:
 
-- Server-Side Re[ndering (SSR): Thymeleaf generates HTML on the server side. This is beneficial for SEO, as the content is fully rendered when the
-  page is loaded, making it easily indexable by search engines.
-- Spring Integration: Thymeleaf has a natural integration with Spring, which allows for seamless use of Spring MVC features and security integrations.
-- Template Engine: Thymeleaf's template engine provides a way to create dynamic content on the server side before sending it to the client. This can
-  simplify some aspects of development since it allows for direct integration of server-side data within the HTML.
-- Reduced Cl]()ient-Side Load: Since the HTML is pre-rendered, there is less computational load on the client side, which can lead to faster page
-  rendering, particularly on devices with lower processing power.
+- Interactivity: JavaScript allows for creating highly interactive and dynamic user interfaces, such as SPAs. Frameworks like React, Angular, or
+  Vue.js enable this with ease.
+- User Experience: Client-side rendering can provide a smoother user experience, as pages can update without a full reload.
+- Offline Capabilities: JavaScript applications can be designed to work offline more effectively using service workers, local storage, and other
+  caching mechanisms.
+- Modern Architecture: Adopting JavaScript frameworks can lead to a more modern architecture, separating the frontend from the backend, and making it
+  easier to develop, test, and maintain.
 
 #### Disadvantages:
 
-- Less Interactive: Thymeleaf is not designed for creating single-page applications (SPAs) or highly dynamic interfaces that react instantaneously to
-  user input.
-- Round-Trip Time: Every interaction typically requires a round trip to the server to render new or updated content, which can result in slower user
-  experiences compared to client-side rendering.
-- Limited Offline Capability: Thymeleaf-based applications rely on server connection for rendering, making them less capable of running offline
-  compared to applications that leverage client-side rendering.
+- SEO Challenges: SPAs and client-side rendered applications can face challenges with SEO, as content is not rendered until the JavaScript is executed
+  by the browser.
+- Initial Load Time: JavaScript heavy applications can suffer from longer initial load times, as the browser needs to download, parse, and execute
+  JavaScript before rendering the content.
+- Complexity: Building an application with JavaScript frameworks can introduce additional complexity in terms of state management and handling data
+  synchronization with the backend.
+
+### Spring Framework Integration
+
+#### Spring Framework, when used as the backend for client-side rendered applications, primarily handles business logic, data access, and service-level operations, while the client-side focuses on the user interface and interactivity. Here's how Spring functionality helps and integrates with client-side rendering:
+
+- **Restful APIs:** Spring's support for building RESTful services is fundamental when working with client-side JavaScript frameworks or libraries. It
+  uses @RestController and @RequestMapping annotations to easily create API endpoints that JavaScript code can consume via AJAX or Fetch API calls.
+- **Data Access:** Spring provides comprehensive data access support with Spring Data repositories, making it easy to interact with databases. The
+  repositories abstract the complexity of raw database access, transactions, and CRUD operations, exposing simple interfaces that can be injected into
+  your services.
+- **Security:** Spring Security can protect REST endpoints, requiring authentication and authorization before the JavaScript application can access
+  them. It provides features like session management, OAuth2, CSRF protection, and CORS policies that are crucial for modern web applications.
+- **Validation:** Spring supports validation mechanisms that can be applied to the data models, ensuring the integrity of the data before it's
+  processed by the backend or returned to the client-side.
+- **Business Logic:** The core of the application logic, such as calculations, rules processing, and decision-making, is handled in the service layer
+  of a Spring application, ensuring that the client-side remains lightweight and focused only on presentation logic.
+- **Exception Handling:** Spring provides a centralized exception handling mechanism (@ControllerAdvice), which allows for cleaner error handling and
+  consistent error responses to the frontend.
+- **Testing:** Spring's testing support is comprehensive, with facilities to test the RESTful endpoints, service components, and integration tests
+  that can simulate the interactions between the backend and frontend.
 
 ### Maven Dependencies
 
 1. **spring-boot-starter-web:** This starter provides all the necessary dependencies to build a web application. This includes packages for RESTful
    application development, Tomcat as the default embedded container, Spring MVC, and other necessary libraries.
     - **Analogy:** This is akin to a pre-assembled play kit, containing scripts, costumes, and set designs, making it easy to start a new production.
-
-2. **spring-boot-starter-thymeleaf:** It's a quick way to get Thymeleaf set up in your Spring Boot application. Thymeleaf is a Java template engine
-   for processing and creating HTML, XML, JavaScript, CSS, and text.
-    - **Analogy:** Consider this as a specialized set design and decoration kit, focusing on the visual elements of the play that the audience will
-      interact with.
 
 ### [Exercise 1](Example%2001/README.md)

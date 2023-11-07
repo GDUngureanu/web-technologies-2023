@@ -1,4 +1,4 @@
-package web.technologies.lab04.model;
+package web.technologies.lab05.model;
 
 import lombok.Data;
 

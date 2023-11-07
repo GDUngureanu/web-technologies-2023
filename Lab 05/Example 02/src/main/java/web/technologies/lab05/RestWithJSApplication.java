@@ -1,4 +1,4 @@
-package web.technologies.lab04;
+package web.technologies.lab05;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
