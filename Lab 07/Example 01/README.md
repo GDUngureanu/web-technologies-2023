@@ -1,4 +1,4 @@
-# Web Technologies - Laboratory 06 - Exercise 01
+# Web Technologies - Laboratory 07 - Exercise 01
 
 ## Example for a Marketplace
 
@@ -7,7 +7,9 @@
 - Path: `/api/users/register`
 - Type: `POST`
 -
+
 Body: `{ userType: "client/individualDistributor/companyDistributor/deliverer", name: String, email: String, password: String, companyName: String (optional for companyDistributor) }`
+
 - Response: `{ userId: UUID, userType: String, name: String, email: String, companyName: String (if applicable) }`
 
 2. **Sign In**

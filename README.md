@@ -42,6 +42,12 @@ https://unibuc.ro/studii/structura-anului-universitar/
 
 #### [Laboratory 05](Lab%2005/README.md)
 
+#### [Laboratory 06](Lab%2006/Example%2001/README.md)
+
+#### [Laboratory 07](Lab%2007/Example%2001/README.md)
+
+#### [Laboratory 08](Lab%2008/Example%2001/README.md)
+
 ### Project
 
 #### [Project Requirements](Project/README.md)
