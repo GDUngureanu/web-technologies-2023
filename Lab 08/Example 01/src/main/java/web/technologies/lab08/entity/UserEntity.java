@@ -1,16 +1,13 @@
 package web.technologies.lab08.entity;
 
+import java.sql.Timestamp;
 import java.util.UUID;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 import web.technologies.lab08.model.UserRole;
 
-@Entity(name = "USERS")
+@Entity
 public class UserEntity {
 
     @Id
@@ -21,10 +18,14 @@ public class UserEntity {
     private String email;
     private String password;
     private String deliveryAddress;
+    @Column(name = "NEW_COMPANY")
     private String company;
     private String address;
     @Enumerated(EnumType.STRING)
     private UserRole role;
+    
+    @CreationTimestamp
+    private Timestamp createdAt;
 
     public UserEntity() {
 
