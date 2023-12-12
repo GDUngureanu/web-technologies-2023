@@ -1,7 +1,7 @@
 ## Web Technologies - 2023
 
 Schedule **Wednesday 8:00 - 10:00** \
-Class **L-303**
+Class **L-201**
 
 ### Evaluation
 
@@ -49,6 +49,8 @@ https://unibuc.ro/studii/structura-anului-universitar/
 #### [Laboratory 08](Lab%2008/Example%2001/README.md)
 
 #### [Laboratory 09](Lab%2009/Example%2001/README.md)
+
+#### [Laboratory 10](Lab%2010/README.md)
 
 ### Project
 
